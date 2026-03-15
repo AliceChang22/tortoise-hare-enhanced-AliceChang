@@ -51,6 +51,14 @@ button:disabled {
 	margin-bottom: 0.5rem;
 }
 
+#tortoiseScore {
+	text-align: center;
+}
+
+#hareScore {
+	text-align: center;
+}
+
 .track {
 	display: grid;
 	grid-template-columns: repeat(70, 1.1fr);
