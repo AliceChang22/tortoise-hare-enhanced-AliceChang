@@ -10,6 +10,10 @@ let harePosition = 1
 let raceIntervalId = null
 let stepCount = 0
 
+// score counter variables
+let tortoiseWins = 0
+let hareWins = 0
+
 startBtn.addEventListener("click", startRace)
 
 // start the race with a button click
