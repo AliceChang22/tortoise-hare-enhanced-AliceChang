@@ -4,11 +4,17 @@ const TRACK_LENGTH = 70; // Sometimes constant variables are all CAPS
 const startBtn = document.getElementById("startBtn");
 const messageEl = document.getElementById("message");
 const trackEl = document.getElementById("track");
+const tortoiseScore = document.getElementById("tortoiseScore")
+const hareScore = document.getElementById("hareScore")
 
 let tortoisePosition = 1
 let harePosition = 1
 let raceIntervalId = null
 let stepCount = 0
+
+// score counter variables
+let tortoiseWins = 0
+let hareWins = 0
 
 startBtn.addEventListener("click", startRace)
 
@@ -114,12 +120,32 @@ function showResult(){
     if (tortoisePosition >= TRACK_LENGTH && harePosition >= TRACK_LENGTH){
         messageEl.textContent = "It's a tie!"
     } else if (tortoisePosition >= TRACK_LENGTH) {
+        tortoiseWins++
         messageEl.textContent = "Tortoise wins!! Yay!!"
     } else if (harePosition >= TRACK_LENGTH) {
+        hareWins++
         messageEl.textContent = "Hare wins!"
     } else {
         messageEl.textContent = "Race stopped..."
     }
+
+    // update the scoreboard
+    let tortoiseSuffix
+    if (tortoiseWins === 1) {
+        tortoiseSuffix = "win"
+    } else {
+        tortoiseSuffix = "wins"
+    }
+
+    let hareSuffix
+    if (hareWins === 1) {
+        hareSuffix = "win"
+    } else {
+        hareSuffix = "wins"
+    }
+
+    tortoiseScore.textContent = `Tortoise: ${tortoiseWins} ${tortoiseSuffix}`
+    hareScore.textContent = `Hare: ${hareWins} ${hareSuffix}`
 }
 
 // initial render of the empty track
