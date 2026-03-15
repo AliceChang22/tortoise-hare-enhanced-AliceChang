@@ -130,8 +130,22 @@ function showResult(){
     }
 
     // update the scoreboard
-    tortoiseScore.textContent = `Tortoise: ${tortoiseWins} wins`
-    hareScore.textContent = `Hare: ${hareWins} wins`
+    let tortoiseSuffix
+    if (tortoiseWins === 1) {
+        tortoiseSuffix = "win"
+    } else {
+        tortoiseSuffix = "wins"
+    }
+
+    let hareSuffix
+    if (hareWins === 1) {
+        hareSuffix = "win"
+    } else {
+        hareSuffix = "wins"
+    }
+
+    tortoiseScore.textContent = `Tortoise: ${tortoiseWins} ${tortoiseSuffix}`
+    hareScore.textContent = `Hare: ${hareWins} ${hareSuffix}`
 }
 
 // initial render of the empty track
