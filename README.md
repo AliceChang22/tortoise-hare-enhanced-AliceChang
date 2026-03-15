@@ -6,3 +6,4 @@ Add win counter variables
 Get html element and update scoreboard
 4. Screenshot of my Pull Request:
 
+![Image Alt](https://raw.githubusercontent.com/AliceChang22/tortoise-hare-enhanced-AliceChang/9472ad7cdb18f531466d8c00a8ba86eb4b04ec9a/PullRequest.png)
